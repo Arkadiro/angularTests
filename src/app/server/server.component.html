@@ -1,3 +1,13 @@
-<p>
-  server works!
+<!-- <p *ngIf="serverStatus === 'offline'" class="offline">
+    {{el.name}} {{el.content}} {{serverStatus}}
+</p>
+<p *ngIf="serverStatus === 'online'" class="online">
+    {{el.name}} {{el.content}} {{serverStatus}}
+</p> -->
+<!-- <p [ngStyle]="{color: this.serverStatus === 'online' ? 'green': 'red'}">
+    {{el.name}} {{el.content}} {{serverStatus}}
+</p> -->
+
+<p [ngClass]="this.serverStatus === 'online' ? 'online': 'offline'">
+    #{{i+1}} {{el.name}} {{el.content}} {{serverStatus}} {{showLog(i)}}
 </p>

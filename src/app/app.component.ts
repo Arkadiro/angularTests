@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-start-app';
+  server = [
+    {name: 'linux', content: 'server'},
+    {name: 'windows', content: 'server'}
+  ];
+
+  serverAdd(serverData){
+    this.server.push({
+      name: serverData.name,
+      content: serverData.content
+    })
+  }
 }
