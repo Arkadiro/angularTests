@@ -1,3 +1,32 @@
-<p>
-  servers works!
-</p>
+<div>
+  <div>
+    <label>Server name</label><br>
+    <input 
+      type="text" 
+      class="form-control" 
+      [(ngModel)]="name">
+      <br>
+      <label>Server content</label><br>
+    <input 
+      type="text" 
+      class="form-control" 
+      [(ngModel)]="content">
+      <br>
+    <!-- <p>{{serverCreationStatus}}</p> -->
+    <p *ngIf="serverCreated1">Server was created! server name: {{name}}</p>
+    <button 
+      class="btn btn-primary"
+      [disabled]="!allowNewServer"
+      (click)="onCreateServer()"
+      >Add Server</button>
+  </div>
+  <hr>
+  <app-server 
+    *ngFor="let serverout of element; let i = index" 
+    [i] = "i" 
+    [el]="serverout"
+    [logs]="log">
+  </app-server>
+</div>
+      
+
